@@ -9,21 +9,17 @@ class Cliente{
 class ContaCorrente{
   constructor(agencia, saldo){
     this.agencia = agencia;
-    this.saldo = saldo
+    this._saldo = saldo
   }
   depositar(valor){
-    if(valor > 0){
-      this.saldo += valor
-    } else{
-      console.log('operacao negada')
-    }
+    if(valor<=0) return;
+    this._saldo += valor
   }
   sacar(valor){
-    if(this.saldo >= valor){
-      this.saldo -= valor
-    } else {
-      console.log('operacao negada')
-    }
+    if(this._saldo >= valor){
+      this._saldo -= valor;
+      return valor;
+    } 
   }
 }
 
@@ -40,7 +36,8 @@ contaCorrenteRicardo.saldo = 0;
 contaCorrenteRicardo.agencia = 1001;
 
 contaCorrenteRicardo.depositar(200);
-contaCorrenteRicardo.sacar(100)
+const valorSacado = contaCorrenteRicardo.sacar(100);
+
 
 console.log(contaCorrenteRicardo.saldo);
 
