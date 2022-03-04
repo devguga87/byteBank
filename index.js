@@ -1,27 +1,5 @@
-class Cliente{
-  constructor(nome, cpf){
-    this.nome = nome;
-    this.cpf = cpf;
-
-  }
-}
-
-class ContaCorrente{
-  constructor(agencia, saldo){
-    this.agencia = agencia;
-    this._saldo = saldo
-  }
-  depositar(valor){
-    if(valor<=0) return;
-    this._saldo += valor
-  }
-  sacar(valor){
-    if(this._saldo >= valor){
-      this._saldo -= valor;
-      return valor;
-    } 
-  }
-}
+import { Cliente } from './Cliente.js'
+import { ContaCorrente } from './ContaCorrente.js'
 
 const cliente1 = new Cliente();
 cliente1.nome = 'Ricardo';
@@ -32,13 +10,8 @@ cliente2.nome = 'Alice';
 cliente2.cpf = 88822233309;
 
 const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.saldo = 0;
 contaCorrenteRicardo.agencia = 1001;
-
-contaCorrenteRicardo.depositar(200);
-const valorSacado = contaCorrenteRicardo.sacar(100);
-
-
-console.log(contaCorrenteRicardo.saldo);
-
+contaCorrenteRicardo._saldo = 20;
+contaCorrenteRicardo.depositar(200)
+console.log(contaCorrenteRicardo)
 

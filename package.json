@@ -1,0 +1,21 @@
+{
+  "name": "js_prog_orientada_objetos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devguga87/byteBank.git"
+  },
+  "keywords": [],
+  "author": "Gustavo Seabra <devguga87@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devguga87/byteBank/issues"
+  },
+  "homepage": "https://github.com/devguga87/byteBank#readme"
+}
