@@ -1,7 +1,8 @@
 export class ContaCorrente{
-  constructor(agencia, saldo){
+  constructor(agencia, saldo, cliente){
     this.agencia = agencia;
     this._saldo = saldo
+    this.cliente = cliente
   }
   depositar(valor){
     if(valor<=0) return;
@@ -12,5 +13,10 @@ export class ContaCorrente{
       this._saldo -= valor;
       return valor;
     } 
+  }
+
+  transferir(valor, conta){
+    const valorSacado = this.sacar(valor);
+    conta.depositar(valorSacado)
   }
 }
